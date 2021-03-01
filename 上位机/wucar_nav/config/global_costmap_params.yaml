@@ -1,0 +1,20 @@
+global_costmap:
+    #Coordinate frame and tf parameter
+    global_frame: map 
+    robot_base_frame: base_link
+    transform_tolerance: 3.0
+
+    #Rate parameters
+    update_frequency: 2.0
+    publish_frequency: 0.5
+
+    #map params
+    static_map: true
+    rolling_window: false
+
+    plugins:
+    - {name: static_layer,    type: "costmap_2d::StaticLayer"}
+
+    - {name: global_inflation_layer,  type: "costmap_2d::InflationLayer"}
+
+

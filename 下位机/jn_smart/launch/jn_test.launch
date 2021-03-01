@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="jn_smart" type="jn_listener" name="jn_listener" output="screen"/>
+    <node pkg="jn_smart" type="pub_ui" name="pub_ui" output="screen"/>
+    <node pkg="jn_smart" type="sub_scan" name="sub_scan" output="screen"/>
+
+    <node pkg="ls01B" type="ls01B" name="ls01B" output="screen"/>
+
+</launch>

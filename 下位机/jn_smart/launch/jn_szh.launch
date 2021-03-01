@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="jn_smart" type="jn_listener" name="jn_listener" output="screen">
+    <remap from="cmd_vel" to="/mobile_base/commands/velocity"/>
+  </node>
+
+    <node pkg="jn_smart" type="jn_talker" name="jn_talker" output="screen"/>
+
+</launch>

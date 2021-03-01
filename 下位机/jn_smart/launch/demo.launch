@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="jn_smart" type="jn_driver" name="jn_driver" output="screen"/>
+    <node pkg="jn_smart" type="timed_out_and_back" name="timed_out_and_back" output="screen"/>
+
+</launch>

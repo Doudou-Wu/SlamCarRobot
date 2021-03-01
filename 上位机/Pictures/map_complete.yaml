@@ -1,0 +1,6 @@
+image: /home/nvidia/Pictures/map_complete.pgm
+resolution: 0.050000
+origin: [-7.612836, -6.890971, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

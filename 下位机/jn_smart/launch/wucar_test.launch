@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="jn_smart" type="jn_driver" name="jn_driver" output="screen"/>
+    <node pkg="jn_smart" type="keyboard_ctr" name="keyboard_ctr" output="screen"/>
+    <node pkg="jn_smart" type="sub_scan" name="sub_scan" output="screen"/>
+    <node pkg="ls01B" type="ls01B" name="ls01B" output="screen"/>
+    <node pkg="jn_smart" type="wucar_odom_demo" name="odometry_publisher" output="screen"/>
+    <node pkg="robot_setup_tf" type="tf_broadcaster" name="robot_tf_publisher" output="screen"/>
+</launch>                 

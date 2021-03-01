@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="jn_smart" type="jn_driver" name="jn_driver" output="screen"/>
+    <node pkg="jn_smart" type="pub_sub_ui" name="pub_sub_ui" output="screen"/>
+    <node pkg="jn_smart" type="keyboard_ctr" name="keyboard_ctr" output="screen"/>
+
+</launch>

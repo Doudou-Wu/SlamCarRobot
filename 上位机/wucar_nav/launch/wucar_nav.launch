@@ -1,0 +1,30 @@
+<launch>
+
+  <!-- Run the map server -->
+  <arg name="map_path" default="/home/nvidia/Pictures/map_complete.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_path)"/>
+  
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(find wucar_nav)/config/amcl.launch.xml">
+     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!-- Run move base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+    <rosparam file="$(find wucar_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find wucar_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find wucar_nav)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find wucar_nav)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find wucar_nav)/config/move_base_params.yaml" command="load" />
+    <rosparam file="$(find wucar_nav)/config/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find wucar_nav)/config/teb_local_planner_params.yaml" command="load" />
+    <remap from="cmd_vel" to="/cmd_vel" />
+  </node>
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find wucar_nav)/config/wucar_nav.rviz" />
+  
+</launch>

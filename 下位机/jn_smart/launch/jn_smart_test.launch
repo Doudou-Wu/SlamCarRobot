@@ -1,0 +1,12 @@
+<launch>
+    <node pkg="jn_smart" type="jn_driver" name="jn_driver" output="screen"/>
+
+    <node pkg="jn_smart" type="keyboard_ctr" name="keyboard_ctr" output="screen"/>
+
+    <node pkg="ls01B" type="ls01B" name="ls01B" output="screen"/>
+
+    <node pkg="jn_smart" type="sub_scan" name="sub_scan" output="screen"/>
+
+    <node pkg="jn_smart" type="pub_sub_ui" name="pub_sub_ui" output="screen"/>
+
+</launch>
